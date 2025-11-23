@@ -10728,7 +10728,7 @@ h5,
   opacity: 1 !important;
 }
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-  color: #bc9755;
+  color: #3a2c27;
 }
 @media (max-width: 991.98px) {
   .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
@@ -10837,11 +10837,11 @@ h5,
   }
 }
 .ftco-navbar-light.scrolled .nav-item.active > a {
-  color: #96bb7c !important;
+  color: rgb(188, 151, 85) !important;
 }
 .ftco-navbar-light.scrolled .nav-item.cta > a {
   color: #fff !important;
-  background: #96bb7c;
+  background: rgb(188, 151, 85);
   border: none !important;
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
@@ -10881,7 +10881,7 @@ h5,
 .ftco-navbar-light.scrolled .nav-link {
   padding-top: 0.9rem !important;
   padding-bottom: 0.9rem !important;
-  color: #000000 !important;
+  color: #3a2c27 !important;
 }
 .ftco-navbar-light.scrolled .nav-link.active {
   color: #96bb7c !important;
@@ -11771,7 +11771,7 @@ textarea.form-control {
   font-size: 18px;
   display: inline-block;
   margin-bottom: 0;
-  color: #96bb7c;
+  color: #a8864d;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -11789,7 +11789,7 @@ textarea.form-control {
   width: 50px;
   height: 1px;
   margin-top: -1px;
-  background: #96bb7c;
+  background: #a8864d;
 }
 .heading-section .subheading:before {
   position: absolute;
@@ -11802,7 +11802,7 @@ textarea.form-control {
   width: 50px;
   height: 1px;
   margin-top: -1px;
-  background: #96bb7c;
+  background: #a8864d;
 }
 
 .heading-section h2 {
@@ -12302,17 +12302,16 @@ textarea.form-control {
     border-right: 1px solid rgba(0, 0, 0, 0.07);
   }
 }
-
 .ftco-counter .text strong.number {
   font-weight: 600;
   font-size: 50px;
-  color: #96bb7c;
+  color: #bc9755;
 }
 
 .ftco-counter .text span {
   display: block;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
+  color: #3a2c27;
   margin-bottom: 10px;
   line-height: 1.4;
   padding-left: 15px;
@@ -12918,4 +12917,21 @@ textarea.form-control {
 .logo {
   width: 220px;
   height: auto;
+}
+
+@media (max-width: 991px) {
+  .counter-wrap .text {
+    justify-content: center !important;
+    text-align: center !important;
+    padding-top: 10px;
+  }
+  .counter-wrap .text span {
+    text-align: center !important;
+    display: block;
+  }
+}
+@media (max-width: 991px) {
+  .find {
+    margin-bottom: 35px;
+  }
 }
