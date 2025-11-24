@@ -11847,9 +11847,9 @@ textarea.form-control {
 .portfolio-wrap .text .subheading {
   display: block;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 30px;
   letter-spacing: 3px;
-  color: #000000;
+  color: #3a2c27;
   font-weight: 700;
 }
 .portfolio-wrap .text h2 {
@@ -11872,18 +11872,19 @@ textarea.form-control {
 }
 .portfolio-wrap .text .desc .custom-btn {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 3px;
-  color: #96bb7c;
+  color: #a68344;
   font-weight: 700;
 }
 .portfolio-wrap .text .desc p {
   margin-bottom: 30px;
+  color: #3a2c27;
 }
 .portfolio-wrap .text .desc .top {
   position: relative;
 }
-.portfolio-wrap .text .desc .top:after {
+/* .portfolio-wrap .text .desc .top:after {
   position: absolute;
   top: -30px;
   left: -150px;
@@ -11896,7 +11897,7 @@ textarea.form-control {
   -webkit-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
+} */
 @media (max-width: 767.98px) {
   .portfolio-wrap .text .desc .top:after {
     display: none;
@@ -12933,5 +12934,42 @@ textarea.form-control {
 @media (max-width: 991px) {
   .find {
     margin-bottom: 35px;
+  }
+}
+
+/* Shrink portfolio section */
+.portfolio-wrap .img {
+  height: 300px !important; /* reduce height of image */
+}
+
+.portfolio-wrap .text {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.portfolio-wrap .desc {
+  padding: 10px 0 !important;
+}
+
+.portfolio-wrap h2 {
+  font-size: 22px !important;
+  margin-bottom: 10px !important;
+}
+
+.portfolio-wrap p {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Make it even more compact on mobile */
+@media (max-width: 768px) {
+  .portfolio-wrap .img {
+    height: 200px !important;
+  }
+  .portfolio-wrap .text {
+    padding: 10px !important;
+  }
+  .portfolio-wrap h2 {
+    font-size: 18px !important;
   }
 }
