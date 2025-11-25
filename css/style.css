@@ -11576,12 +11576,12 @@ textarea.form-control {
 }
 
 .ftco-section {
-  padding: 6em 0;
+  padding: 2em 0;
   position: relative;
 }
 @media (max-width: 767.98px) {
   .ftco-section {
-    padding: 6em 0;
+    padding: 2em 0;
   }
 }
 
@@ -12972,4 +12972,23 @@ textarea.form-control {
   .portfolio-wrap h2 {
     font-size: 18px !important;
   }
+}
+
+.logo-carousel .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.client-logo {
+  max-width: 140px;
+  max-height: 70px;
+  object-fit: contain;
+  transition: 0.3s ease-in-out;
+}
+
+.company-heading {
+  font-size: 45px !important;
+  font-weight: 400 !important;
 }
