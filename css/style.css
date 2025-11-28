@@ -11771,7 +11771,7 @@ textarea.form-control {
   display: inline-block;
   margin-bottom: 0;
   color: #a8864d;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -11966,7 +11966,7 @@ textarea.form-control {
 .block-7 .pricing-text,
 .block-7 .pricing-text li {
   padding: 0;
-  margin: 0;
+  margin: 5px;
 }
 .block-7 .pricing-text li {
   list-style: none;
@@ -11974,7 +11974,7 @@ textarea.form-control {
   color: #000000;
 }
 .block-7 .pricing-text li span.fa {
-  color: #96bb7c;
+  color: #a8864d;
 }
 .block-7 .btn-primary {
   color: #fff;
@@ -12990,4 +12990,10 @@ textarea.form-control {
 .company-heading {
   font-size: 45px !important;
   font-weight: 400 !important;
+}
+
+.aim-title {
+  text-align: center;
+  font-weight: 700;
+  padding-bottom: 20px;
 }
