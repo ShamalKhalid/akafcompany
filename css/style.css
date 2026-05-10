@@ -11477,6 +11477,9 @@ h5,
     height: 600px;
     margin-bottom: 30px;
   }
+  .img-2.img-overlay {
+    height: auto !important;
+  }
 }
 
 .img-2.img-overlay {

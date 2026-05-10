@@ -223,10 +223,12 @@
       #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
       #scroll-top:hover   { background:var(--gold-dark); transform:translateY(-2px); }
 
-      .nav-item.active > .nav-link { position:relative; }
-      .nav-item.active > .nav-link::after {
-        content:''; position:absolute; bottom:4px; left:20px; right:20px;
-        height:2px; background:var(--gold); border-radius:1px;
+      @media (min-width: 992px) {
+        .nav-item.active > .nav-link { position:relative; }
+        .nav-item.active > .nav-link::after {
+          content:''; position:absolute; bottom:4px; left:20px; right:20px;
+          height:2px; background:var(--gold); border-radius:1px;
+        }
       }
 
       html { scroll-padding-top:80px; }
