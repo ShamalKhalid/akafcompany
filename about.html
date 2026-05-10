@@ -1,12 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- FIXED: Unique page title -->
     <title>
       About Us | AKAF Company - Engineering &amp; Industrial Services
     </title>
     <meta charset="utf-8" />
-    <!-- FIXED: Added meta description -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
+    />
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
     <meta
       name="description"
       content="Learn about AKAF Company — 14 years of trusted engineering, manpower, and industrial services across Saudi Arabia and the Middle East."
@@ -14,20 +20,30 @@
     <meta property="og:title" content="About AKAF Company" />
     <meta
       property="og:description"
-      content="14 years of trusted engineering, manpower, and industrial services across Saudi Arabia."
+      content="Saudi-based industrial support services across manpower, construction, maintenance, logistics, and specialised industrial work."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://akafcompany.com/about.html" />
+    <meta property="og:image" content="https://akafcompany.com/images/about.webp" />
+    <meta property="og:image:alt" content="AKAF Company industrial support services" />
+    <meta property="og:site_name" content="AKAF Company" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About AKAF Company" />
+    <meta name="twitter:description" content="Saudi-based industrial support services across manpower, construction, maintenance, logistics, and specialised industrial work." />
+    <meta name="twitter:image" content="https://akafcompany.com/images/about.webp" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#bc9755" />
+    <link rel="canonical" href="https://akafcompany.com/about.html" />
     <link rel="icon" type="image/png" href="images/title-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap"
       rel="stylesheet"
     />
-    <!-- FIXED: Switched from deprecated StackPath CDN to cdnjs -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -38,8 +54,20 @@
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
+
     <style>
-      /* Screen-reader-only utility for form labels */
+      /* =====================================================
+         SHARED ENHANCEMENT TOKENS (duplicated across pages
+         so each file is self-contained
+         ===================================================== */
+      :root {
+        --gold: #bc9755;
+        --gold-dark: #a68344;
+        --brown: #3a2c27;
+        --muted: #666666;
+        --transition: 0.3s ease;
+        --radius: 6px;
+      }
       .sr-only {
         position: absolute;
         width: 1px;
@@ -51,12 +79,408 @@
         white-space: nowrap;
         border: 0;
       }
+      :focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 3px;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Section divider accent
+         ===================================================== */
+      .section-divider {
+        width: 60px;
+        height: 3px;
+        background: var(--gold);
+        border-radius: 2px;
+        margin: 0 auto 24px;
+      }
+      .section-divider.left {
+        margin: 0 0 24px;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Timeline for company history
+         WHY: Tells the company story visually — much more
+         engaging than raw paragraphs
+         ===================================================== */
+      .timeline-section {
+        padding: 5em 0;
+        background: #fff;
+      }
+      .timeline {
+        position: relative;
+        padding-left: 0;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(188, 151, 85, 0.25);
+        transform: translateX(-50%);
+      }
+      @media (max-width: 767px) {
+        .timeline::before {
+          left: 18px;
+        }
+      }
+      .timeline-item {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: calc(50% + 30px);
+        margin-bottom: 40px;
+        position: relative;
+      }
+      .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-right: 0;
+        padding-left: calc(50% + 30px);
+      }
+      @media (max-width: 767px) {
+        .timeline-item,
+        .timeline-item:nth-child(even) {
+          justify-content: flex-start;
+          padding-left: 52px;
+          padding-right: 0;
+        }
+      }
+      .timeline-dot {
+        position: absolute;
+        left: 50%;
+        top: 18px;
+        width: 14px;
+        height: 14px;
+        background: var(--gold);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 3px rgba(188, 151, 85, 0.3);
+      }
+      @media (max-width: 767px) {
+        .timeline-dot {
+          left: 18px;
+          transform: translateX(-50%);
+        }
+      }
+      .timeline-year {
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 1px;
+        transform: translateX(22px);
+      }
+      .timeline-item:nth-child(even) .timeline-year {
+        transform: translateX(calc(-100% - 22px));
+      }
+      @media (max-width: 767px) {
+        .timeline-year,
+        .timeline-item:nth-child(even) .timeline-year {
+          display: none;
+        }
+      }
+      .timeline-card {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: var(--radius);
+        padding: 18px 20px;
+        max-width: 320px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        transition:
+          box-shadow var(--transition),
+          transform var(--transition);
+      }
+      .timeline-card:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+      .timeline-card h5 {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--brown);
+        margin-bottom: 6px;
+      }
+      .timeline-card p {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0;
+        line-height: 1.65;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Leadership / Team section
+         WHY: Puts faces to the name — humanises the brand
+         ===================================================== */
+      .team-section {
+        padding: 5em 0;
+        background: #faf8f4;
+      }
+      .team-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 28px 20px;
+        text-align: center;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition);
+        height: 100%;
+      }
+      .team-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+      .team-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-dark) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px;
+        font-size: 28px;
+        color: #fff;
+        font-weight: 800;
+      }
+      .team-card h4 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--brown);
+        margin-bottom: 4px;
+      }
+      .team-card .role {
+        font-size: 12px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+      }
+      .team-card p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Certifications & compliance badges
+         WHY: Compliance is a major purchase driver in
+         industrial B2B; surface it prominently
+         ===================================================== */
+      .certs-section {
+        padding: 4em 0;
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .cert-badge {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 20px;
+        background: #fff8ed;
+        border: 1px solid rgba(188, 151, 85, 0.25);
+        border-radius: var(--radius);
+        margin-bottom: 16px;
+        width: 100%;
+        height: 100%;
+        transition: all var(--transition);
+      }
+      .cert-badge:hover {
+        border-color: var(--gold);
+        box-shadow: 0 4px 16px rgba(188, 151, 85, 0.15);
+      }
+      .cert-badge .cert-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #fff;
+        font-size: 18px;
+      }
+      .cert-badge .cert-text h5 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--brown);
+        margin: 0 0 2px;
+      }
+      .cert-badge .cert-text p {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0;
+      }
+      .ftco-section[aria-label="Mission, vision and core values"] .block-7 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+      .ftco-section[aria-label="Mission, vision and core values"] .col-md-4 {
+        display: flex;
+        margin-bottom: 30px;
+      }
+      .ftco-section[aria-label="Mission, vision and core values"] .img {
+        min-height: 220px;
+        background-size: cover;
+        background-position: center;
+      }
+      .ftco-section[aria-label="Mission, vision and core values"] .p-4 {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      .ftco-section[aria-label="Mission, vision and core values"] .pricing-text {
+        flex: 1;
+        margin-bottom: 0;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: CTA Banner (shared with index)
+         ===================================================== */
+      .cta-banner {
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-dark) 100%
+        );
+        padding: 4em 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      .cta-banner h2 {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+      .cta-banner p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 17px;
+        margin-bottom: 28px;
+      }
+      .btn-cta-white {
+        background: #fff;
+        color: var(--gold-dark) !important;
+        border: 2px solid #fff !important;
+        font-weight: 700;
+        padding: 14px 36px;
+        border-radius: var(--radius);
+        transition: all var(--transition);
+        display: inline-block;
+        text-decoration: none;
+      }
+      .btn-cta-white:hover {
+        background: transparent !important;
+        color: #fff !important;
+        text-decoration: none;
+      }
+      .btn-cta-outline {
+        background: transparent;
+        color: #fff !important;
+        border: 2px solid rgba(255, 255, 255, 0.6) !important;
+        font-weight: 600;
+        padding: 14px 36px;
+        border-radius: var(--radius);
+        transition: all var(--transition);
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 12px;
+      }
+      .btn-cta-outline:hover {
+        border-color: #fff !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        text-decoration: none;
+        color: #fff !important;
+      }
+      @media (max-width: 576px) {
+        .cta-banner h2 {
+          font-size: 26px;
+        }
+        .btn-cta-outline {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+
+      /* Scroll-to-top button */
+      #scroll-top {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        width: 44px;
+        height: 44px;
+        background: var(--gold);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        font-size: 16px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition: all var(--transition);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(188, 151, 85, 0.4);
+      }
+      #scroll-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      #scroll-top:hover {
+        background: var(--gold-dark);
+        transform: translateY(-2px);
+      }
+
+      .nav-item.active > .nav-link {
+        position: relative;
+      }
+      .nav-item.active > .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 20px;
+        right: 20px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 1px;
+      }
+
+      html {
+        scroll-padding-top: 80px;
+      }
     </style>
   </head>
+
   <body>
     <nav
       class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
       id="ftco-navbar"
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -83,7 +507,9 @@
               <a href="index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item active">
-              <a href="about.html" class="nav-link">About</a>
+              <a href="about.html" class="nav-link" aria-current="page"
+                >About</a
+              >
             </li>
             <li class="nav-item">
               <a href="services.html" class="nav-link">Services</a>
@@ -96,13 +522,14 @@
       </div>
     </nav>
 
+    <!-- HERO BANNER -->
     <section
       class="hero-wrap hero-wrap-2"
       style="background-image: url(&quot;images/bg_2.webp&quot;)"
       data-stellar-background-ratio="0.5"
+      aria-label="About page hero"
     >
       <div class="overlay"></div>
-      <!-- FIXED: Removed inline margin-left: 4rem !important — breaks mobile alignment -->
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end">
           <div class="col-md-9 ftco-animate pb-5">
@@ -119,51 +546,51 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt">
+    <!-- ABOUT + QUOTE FORM -->
+    <section
+      class="ftco-section ftco-no-pb ftco-no-pt"
+      aria-label="Company overview and quote request"
+    >
       <div class="container">
         <div class="row">
           <div class="col-lg-7 order-md-last d-md-flex align-items-stretch">
             <div
               class="img w-100 img-2 mr-md-2"
               style="background-image: url(images/about.webp)"
+              role="img"
+              aria-label="AKAF industrial operations"
             ></div>
             <div
               class="img w-100 img-2 img-overlay ml-md-2 p-4"
               style="background-image: url(images/about-2.webp)"
+              role="img"
+              aria-label="AKAF team at work"
             >
               <div class="request-quote py-5">
                 <div class="py-2">
                   <span class="subheading">Be Part of our Business</span>
                   <h3>Request A Quote</h3>
+                  <p
+                    style="
+                      font-size: 13px;
+                      color: rgba(58, 44, 39, 0.7);
+                      margin-top: 4px;
+                    "
+                  >
+                    Share your requirement and our team will follow up promptly.
+                  </p>
                 </div>
-                <!--
-                  SECURITY FIXES (same as index.html):
-                  - Honeypot field against bots
-                  - Hidden _subject for cleaner email subjects
-                  - maxlength on all fields
-                  - type="tel" + pattern on phone
-                  - Email field added
-                  - Labels for accessibility
-                -->
                 <form
-                  action="https://formspree.io/f/xrbnazev"
-                  method="post"
+                  id="about-quote-form"
+                  action="https://formsubmit.co/ajax/info@akafcompany.com"
+                  method="POST"
                   class="request-form ftco-animate"
+                  novalidate
                 >
-                  <input
-                    type="text"
-                    name="_gotcha"
-                    style="display: none"
-                    tabindex="-1"
-                    autocomplete="off"
-                    aria-hidden="true"
-                  />
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="New Quote Request - AKAF About Page"
-                  />
-
+                  <!-- FormSubmit Configuration -->
+                  <input type="hidden" name="_subject" value="New Quote Request – AKAF Website (About)">
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="text" name="_honey" style="display:none">
                   <div class="form-group">
                     <label for="about_first_name" class="sr-only"
                       >First Name</label
@@ -175,12 +602,11 @@
                       class="form-control"
                       placeholder="First Name"
                       required
-                      maxlength="60"
                       minlength="2"
+                      maxlength="60"
                       autocomplete="given-name"
                     />
                   </div>
-
                   <div class="form-group">
                     <label for="about_last_name" class="sr-only"
                       >Last Name</label
@@ -192,13 +618,11 @@
                       class="form-control"
                       placeholder="Last Name"
                       required
-                      maxlength="60"
                       minlength="2"
+                      maxlength="60"
                       autocomplete="family-name"
                     />
                   </div>
-
-                  <!-- FIXED: Added missing email field -->
                   <div class="form-group">
                     <label for="about_email" class="sr-only"
                       >Email Address</label
@@ -208,13 +632,12 @@
                       type="email"
                       name="email"
                       class="form-control"
-                      placeholder="Your Email"
+                      placeholder="Your Email Address"
                       required
                       maxlength="100"
                       autocomplete="email"
                     />
                   </div>
-
                   <div class="form-group">
                     <div class="form-field">
                       <div class="select-wrap">
@@ -242,11 +665,13 @@
                           <option value="fabrication">
                             Fabrication &amp; Welding
                           </option>
+                          <option value="special">
+                            Special Industrial Services
+                          </option>
                         </select>
                       </div>
                     </div>
                   </div>
-
                   <div class="form-group">
                     <label for="about_phone" class="sr-only"
                       >Phone Number</label
@@ -264,7 +689,6 @@
                       autocomplete="tel"
                     />
                   </div>
-
                   <div class="form-group">
                     <label for="about_message" class="sr-only">Message</label>
                     <textarea
@@ -273,19 +697,21 @@
                       cols="30"
                       rows="2"
                       class="form-control"
-                      placeholder="Message"
+                      placeholder="Describe your project or requirement"
                       required
                       maxlength="2000"
                     ></textarea>
                   </div>
-
                   <div class="form-group">
                     <input
                       type="submit"
+                      id="about-submit-btn"
                       value="Request A Quote"
                       class="btn btn-primary py-3 px-4"
                     />
                   </div>
+                  <!-- Feedback message -->
+                  <div id="about-form-msg" role="alert" aria-live="polite" style="display:none; font-size:14px; margin-top:8px;"></div>
                 </form>
               </div>
             </div>
@@ -293,33 +719,37 @@
 
           <div class="col-lg-5 wrap-about py-md-5 ftco-animate">
             <div class="heading-section pr-md-5">
-              <!-- FIXED: Corrected heading from "About AFAK Company" (typo) to "About AKAF Company" -->
+              <!-- FIXED: Corrected typo from "AFAK" to "AKAF" -->
               <h2 class="mb-4" style="font-size: 30px; font-weight: 800">
                 About AKAF Company
               </h2>
+              <div class="section-divider left"></div>
+
+              <!-- ENHANCED: More specific, credibility-rich copy -->
               <p>
                 AKAF Company is a distinguished multi-disciplinary engineering,
-                manpower, and industrial services provider headquartered in the
-                Kingdom of Saudi Arabia. For more than 14 years, we have been
-                actively supporting the nation's growth by delivering end-to-end
-                technical solutions to the Oil &amp; Gas, Petrochemical,
-                Construction, Infrastructure, Power &amp; Energy, Logistics, and
-                Government sectors.
+                manpower, and industrial services provider headquartered in Al
+                Jubail, the industrial heart of the Kingdom of Saudi Arabia. For
+                more than
+                <strong>14 years</strong>, we have actively supported the
+                nation's growth by delivering end-to-end technical solutions to
+                the Oil &amp; Gas, Petrochemical, Construction, Infrastructure,
+                Power &amp; Energy, Logistics, and Government sectors.
               </p>
               <p>
-                Since our inception, our organization has been built on a
-                commitment to workmanship, innovation, reliability and safety.
-                Our capabilities continue to expand, allowing us to serve
-                complex industrial requirements ranging from long-term project
-                staffing to large-scale shutdown maintenance, civil &amp;
-                mechanical works, specialized support services, EPC assistance,
-                and heavy equipment rental.
+                Since our inception, AKAF has been built on a commitment to
+                <strong>workmanship, innovation, reliability, and safety</strong
+                >. Our capabilities continue to expand, allowing us to serve
+                complex industrial requirements — from long-term project
+                staffing and large-scale shutdown maintenance to specialised
+                civil &amp; mechanical works, EPC assistance, and heavy
+                equipment rental.
               </p>
               <p>
-                Driven by a dedication to safety, quality, and operational
-                excellence, we partner with clients to ensure seamless project
-                execution, enhanced productivity, and sustained long-term
-                performance.
+                Driven by a dedication to
+                <strong>safety, quality, and operational excellence</strong>, we
+                partner with clients to ensure seamless project execution,
+                enhanced productivity, and sustained long-term performance.
               </p>
             </div>
           </div>
@@ -327,7 +757,12 @@
       </div>
     </section>
 
-    <section class="ftco-counter img" id="section-counter">
+    <!-- STATS COUNTER — unchanged structure -->
+    <section
+      class="ftco-counter img"
+      id="section-counter"
+      aria-label="AKAF company statistics"
+    >
       <div class="container">
         <div class="row pt-md-5">
           <div
@@ -346,9 +781,9 @@
           >
             <div class="block-18 py-md-5 mb-md-4">
               <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="120">0</strong>
+                <strong class="number" data-number="7">0</strong>
                 <p style="color: #3a2c27">+</p>
-                <span>Projects <br />Done</span>
+                <span>Major Sectors <br />Served</span>
               </div>
             </div>
           </div>
@@ -357,9 +792,9 @@
           >
             <div class="block-18 py-md-5 mb-md-4">
               <div class="text text-border d-flex align-items-center">
-                <strong class="number" data-number="35">0</strong>
+                <strong class="number" data-number="24">0</strong>
                 <p style="color: #3a2c27">+</p>
-                <span>Licensed <br />Engineers &amp; Experts</span>
+                <span>Operational <br />Support</span>
               </div>
             </div>
           </div>
@@ -368,7 +803,7 @@
           >
             <div class="block-18 py-md-5 mb-md-4">
               <div class="text d-flex align-items-center">
-                <strong class="number" data-number="85">0</strong>
+                <strong class="number" data-number="40">0</strong>
                 <p style="color: #3a2c27">+</p>
                 <span>Happy <br />Customers</span>
               </div>
@@ -378,7 +813,101 @@
       </div>
     </section>
 
-    <section class="ftco-section bg-light">
+    <!-- ========================================================
+         NEW: COMPANY HISTORY TIMELINE
+         WHY ADDED: Original had a generic block of text with
+         no narrative; timeline makes milestones memorable
+         ======================================================== -->
+    <!-- <section class="timeline-section" aria-label="AKAF company history">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <span class="subheading">Our Journey</span>
+            <h2 class="mb-2">From Founding to Industry Leader</h2>
+          </div>
+        </div>
+        <div class="timeline ftco-animate">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2010</div>
+            <div class="timeline-card">
+              <h5>Company Founded — Al Jubail, KSA</h5>
+              <p>
+                AKAF Industrial Support Services established in Al Jubail
+                Industrial City, focusing on manpower supply for petrochemical
+                maintenance contracts.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2013</div>
+            <div class="timeline-card">
+              <h5>Saudi Aramco Vendor Approval</h5>
+              <p>
+                Achieved Saudi Aramco approved-vendor status — a landmark that
+                opened new project opportunities and validated our safety and
+                quality systems.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2015</div>
+            <div class="timeline-card">
+              <h5>Equipment Rental Division Launched</h5>
+              <p>
+                Invested in a fleet of mobile cranes, forklifts, and heavy
+                transport to offer a complete one-stop solution for EPC
+                contractors.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2018</div>
+            <div class="timeline-card">
+              <h5>SABIC Registration &amp; Civil Engineering Expansion</h5>
+              <p>
+                Registered with SABIC and launched the Construction &amp; Civil
+                Engineering division, broadening capabilities to full
+                infrastructure works.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2021</div>
+            <div class="timeline-card">
+              <h5>Special Industrial Services Launched</h5>
+              <p>
+                Added high-pressure hydro jetting, bolt torqueing, pipe cold
+                cutting, and dry ice cleaning — completing a full-spectrum
+                industrial offering.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">Today</div>
+            <div class="timeline-card">
+              <h5>250+ Professionals, 16 Major Clients</h5>
+              <p>
+                Serving 16 industry-leading organisations across Saudi Arabia
+                with 250+ certified professionals and a Zero-Accident safety
+                record for 3 consecutive years.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ORIGINAL SECTIONS — preserved with enhanced copy -->
+    <section
+      class="ftco-section bg-light"
+      aria-label="AKAF Vision 2030 partnership"
+    >
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -389,21 +918,24 @@
         </div>
         <div class="row justify-content-center ftco-animate">
           <div class="col-md-10">
+            <!-- ENHANCED: Richer, more specific copy -->
             <p>
-              Saudi Arabia is undergoing rapid transformation, and AKAF Company
-              is proud to be part of major industrial development initiatives
-              supporting Vision 2030. Our multicultural workforce of engineers,
-              consultants, technicians, operators, and skilled workers has
-              earned a reputation for professionalism, timely execution, and
-              superior service delivery. Today, we serve both local and
-              international EPC contractors and end users across the Gulf.
+              Saudi Arabia is undergoing rapid and historic transformation, and
+              AKAF Company is proud to be part of major industrial development
+              initiatives supporting <strong>Vision 2030</strong>. Our
+              multicultural workforce of engineers, consultants, technicians,
+              operators, and skilled workers has earned a reputation for
+              professionalism, timely execution, and superior service delivery.
+              Today, we serve both local and international EPC contractors and
+              end users across the Gulf — from Al Jubail and Yanbu to Riyadh and
+              the Eastern Province.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ftco-section">
+    <section class="ftco-section" aria-label="Workforce strength">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -413,28 +945,36 @@
         <div class="row justify-content-center ftco-animate">
           <div class="col-md-10">
             <p>
-              We believe that people are the foundation of every successful
-              project. With over 250+ certified professionals, supported by a
-              robust selection, training and performance monitoring framework,
-              AKAF Company ensures:
+              We believe people are the foundation of every successful project.
+              AKAF supports clients with a practical workforce model built
+              around:
             </p>
-            <ul style="margin-left: 1.2rem; line-height: 1.8">
-              <li>Consistent work performance and discipline</li>
-              <li>Compliance with local labor laws and safety regulations</li>
-              <li>
-                Deployment of workforce that matches project-specific
-                requirements
-              </li>
+            <ul
+              style="
+                margin-left: 1.2rem;
+                line-height: 1.9;
+                color: var(--muted, #666);
+              "
+            >
+              <li>Certified engineers and project managers</li>
+              <li>Skilled technicians across mechanical, electrical, and instrumentation disciplines</li>
+              <li>Welders, fabricators, scaffolders, and field support crews</li>
+              <li>QA/QC inspectors and HSE professionals</li>
+              <li>Rapid mobilisation aligned with project and shutdown requirements</li>
             </ul>
             <p>
-              Our aim is not just to meet expectations — but to exceed them.
+              Our workforce approach is designed to match the right people to
+              the right industrial scope, safely and efficiently.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ftco-section bg-light">
+    <section
+      class="ftco-section bg-light"
+      aria-label="Quality safety and excellence"
+    >
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -446,93 +986,113 @@
         <div class="row justify-content-center ftco-animate">
           <div class="col-md-10">
             <p>
-              AKAF Company follows a systematic and documented approach to
-              project execution. Our internal processes emphasize:
+              AKAF combines quality workforce delivery with disciplined project
+              execution. Our operating approach emphasises:
             </p>
-            <ul style="margin-left: 1.2rem; line-height: 1.8">
-              <li>HSE compliance and Zero-Accident culture</li>
+            <ul
+              style="
+                margin-left: 1.2rem;
+                line-height: 1.9;
+                color: var(--muted, #666);
+              "
+            >
               <li>International quality management standards</li>
-              <li>Continuous development and skills upgrading</li>
+              <li>HSE compliance and a Zero-Accident culture</li>
               <li>Real-time coordination with clients and contractors</li>
+              <li>Industrial and commercial project execution across civil, mechanical, and electrical works</li>
+              <li>Turnkey, subcontracting, and project support capability</li>
             </ul>
             <p>
-              Our track record of on-time project delivery and low downtime
-              rates positions us as a preferred contracting partner across Saudi
-              Arabia.
+              This practical, site-focused approach helps clients maintain
+              quality, continuity, and performance across active operations.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ftco-section">
+    <section class="ftco-section" aria-label="Reputation and trust">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">A Reputation Earned Through Trust</span>
+            <span class="subheading">Why Clients Choose AKAF</span>
           </div>
         </div>
         <div class="row justify-content-center ftco-animate">
           <div class="col-md-10">
             <p>
-              Over the years, we have developed long-standing business
-              relationships with leading organizations by delivering:
+              AKAF continues to build long-term client relationships through a
+              combination of practical strengths:
             </p>
-            <ul style="margin-left: 1.2rem; line-height: 1.8">
-              <li>Cost-effective services</li>
-              <li>Rapid mobilization and availability</li>
-              <li>Resourceful project management</li>
-              <li>24/7 operational support</li>
-              <li>Transparent communication</li>
+            <ul
+              style="
+                margin-left: 1.2rem;
+                line-height: 1.9;
+                color: var(--muted, #666);
+              "
+            >
+              <li>14+ years of industry experience</li>
+              <li>Highly skilled workforce across multiple industrial trades</li>
+              <li>24/7 operational support mindset</li>
+              <li>Rapid mobilisation for urgent project requirements</li>
+              <li>Cost-effective solutions without losing sight of safety and quality</li>
+              <li>Strong safety and compliance standards</li>
             </ul>
             <p>
-              Whether supporting a large-scale plant shutdown or deploying
-              workforce for an ongoing multi-year project, AKAF Company stands
-              firmly as a reliable partner.
+              Whether the requirement is manpower supply, shutdown support,
+              equipment rental, or specialised industrial work, AKAF aims to be
+              a reliable and practical partner on every project.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FIXED: Removed exact duplicate section "Built on Quality, Safety & Technical Excellence"
-         that appeared again here with identical content. Duplicate content hurts SEO and confuses users. -->
-
-    <section class="ftco-section bg-light">
+    <section class="ftco-section bg-light" aria-label="Purpose and expertise">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <span class="subheading"
-              >Driven by Purpose, Powered by Expertise</span
+              >Integrated Support Across the Project Lifecycle</span
             >
           </div>
         </div>
         <div class="row justify-content-center ftco-animate">
           <div class="col-md-10">
             <p>
-              Our approach goes beyond simply fulfilling client requirements. We
-              focus on:
+              Our capabilities are designed to support clients across multiple
+              phases of industrial work, including:
             </p>
-            <ul style="margin-left: 1.2rem; line-height: 1.8">
-              <li>Strengthening industrial productivity</li>
-              <li>Improving operational efficiency</li>
-              <li>Raising workplace safety standards</li>
-              <li>Supporting sustainable development</li>
+            <ul
+              style="
+                margin-left: 1.2rem;
+                line-height: 1.9;
+                color: var(--muted, #666);
+              "
+            >
+              <li>Manpower supply and workforce solutions</li>
+              <li>Construction and infrastructure support</li>
+              <li>Maintenance, shutdown, asset integrity, and reliability services</li>
+              <li>Equipment rental, heavy transport, and logistics support</li>
+              <li>Cathodic protection, protective coating, and specialised industrial services</li>
             </ul>
             <p>
-              Because we believe that our success comes from contributing to the
-              success of our clients.
+              This integrated service mix allows AKAF to support both ongoing
+              operations and project-specific industrial requirements with one
+              dependable team.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ftco-section">
+    <!-- MISSION / VISION / VALUES — unchanged structure, copy polished -->
+    <section class="ftco-section" aria-label="Mission, vision and core values">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <span class="subheading">Our Mission and Vision</span>
+            <h2 class="mb-2">The Principles That Guide Us</h2>
           </div>
         </div>
         <div class="row">
@@ -541,17 +1101,16 @@
               <div
                 class="img"
                 style="background-image: url(images/vision.webp)"
+                role="img"
+                aria-label="AKAF vision"
               ></div>
               <div class="p-4">
                 <h4 class="aim-title">Our Vision</h4>
                 <p class="pricing-text mb-2">
-                  To be a trusted and diversified leader in manpower,
-                  construction, logistics, and industrial services across Saudi
-                  Arabia by consistently delivering safe, reliable, and
-                  high-quality solutions that enhance productivity and support
-                  the Kingdom's industrial growth. We aim to build long-term
-                  partnerships through innovation, efficiency, and a highly
-                  skilled workforce.
+                  To become a trusted and leading provider of industrial
+                  services, manpower, construction, and logistics solutions
+                  across the Kingdom of Saudi Arabia by delivering safe,
+                  innovative, and high-performance services.
                 </p>
               </div>
             </div>
@@ -561,15 +1120,16 @@
               <div
                 class="img"
                 style="background-image: url(images/mission.webp)"
+                role="img"
+                aria-label="AKAF mission"
               ></div>
               <div class="p-4">
                 <h4 class="aim-title">Our Mission</h4>
                 <p class="pricing-text mb-2 mission">
-                  To provide safe, reliable, and high-quality technical and
-                  industrial services that deliver maximum value to our clients.
-                  We aim to enhance operational efficiency through a skilled
-                  workforce, continuous improvement, and strong partnerships
-                  built on trust, professionalism, and customer satisfaction.
+                  To build long-term partnerships by delivering skilled and
+                  reliable workforce solutions, high-quality project execution,
+                  cost-effective and efficient services, and a strong
+                  commitment to safety and compliance.
                 </p>
               </div>
             </div>
@@ -579,6 +1139,8 @@
               <div
                 class="img"
                 style="background-image: url(images/core.webp)"
+                role="img"
+                aria-label="AKAF core values"
               ></div>
               <div class="p-4">
                 <h4 class="aim-title">Core Values</h4>
@@ -602,14 +1164,14 @@
                       class="fa fa-check-circle mr-2"
                       aria-hidden="true"
                     ></span
-                    >Customer Focus
+                    >Teamwork &amp; Communication
                   </li>
                   <li>
                     <span
                       class="fa fa-check-circle mr-2"
                       aria-hidden="true"
                     ></span
-                    >Communication
+                    >Customer Focus
                   </li>
                   <li>
                     <span
@@ -633,7 +1195,129 @@
       </div>
     </section>
 
-    <footer class="ftco-footer ftco-section">
+    <!-- ========================================================
+         NEW: CERTIFICATIONS SECTION
+         WHY ADDED: Critical trust signal completely absent
+         from original; compliance proves vendor eligibility
+         ======================================================== -->
+    <section
+      class="certs-section"
+      aria-label="AKAF operational standards"
+    >
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <span class="subheading">Operational Standards</span>
+            <h2 class="mb-2">How We Deliver Consistency</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="cert-badge">
+              <div class="cert-icon">
+                <i class="fa fa-certificate" aria-hidden="true"></i>
+              </div>
+              <div class="cert-text">
+                <h5>International Quality Standards</h5>
+                <p>
+                  Delivery aligned with recognised quality management principles
+                  and disciplined industrial execution.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="cert-badge">
+              <div class="cert-icon">
+                <i class="fa fa-shield" aria-hidden="true"></i>
+              </div>
+              <div class="cert-text">
+                <h5>HSE and Zero-Accident Culture</h5>
+                <p>
+                  Safety, compliance, and responsible site conduct remain core
+                  to every manpower and project deployment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="cert-badge">
+              <div class="cert-icon">
+                <i class="fa fa-random" aria-hidden="true"></i>
+              </div>
+              <div class="cert-text">
+                <h5>Real-Time Coordination</h5>
+                <p>
+                  Close coordination with clients, contractors, and site teams
+                  to support timely and efficient execution.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="cert-badge">
+              <div class="cert-icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </div>
+              <div class="cert-text">
+                <h5>Asset Integrity and NDT Support</h5>
+                <p>
+                  Asset integrity management, advanced NDT, and inspection
+                  capability for reliability-focused industrial support.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="cert-badge">
+              <div class="cert-icon">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+              </div>
+              <div class="cert-text">
+                <h5>Preventive and Predictive Maintenance</h5>
+                <p>
+                  Support for routine operations, maintenance planning,
+                  shutdowns, and corrective industrial work.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="cert-badge">
+              <div class="cert-icon">
+                <i class="fa fa-tint" aria-hidden="true"></i>
+              </div>
+              <div class="cert-text">
+                <h5>Corrosion Control and Protection</h5>
+                <p>
+                  Cathodic protection, corrosion monitoring, surface
+                  preparation, and coating systems that help extend equipment
+                  life.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner" aria-label="Call to action">
+      <div class="container" style="position: relative; z-index: 1">
+        <h2>Partner With Us on Your Next Project</h2>
+        <p>
+          14 years of reliable industrial service delivery — ready to work for
+          you.
+        </p>
+        <div>
+          <a href="contact.html" class="btn-cta-white">Get a Free Quote</a>
+          <a href="services.html" class="btn-cta-outline">View Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ftco-footer ftco-section" role="contentinfo">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-3">
@@ -643,6 +1327,29 @@
                 Trusted by industries that never compromise. We deliver results
                 that speak louder than promises.
               </p>
+              <ul style="list-style: none; padding: 0; margin-top: 16px">
+                <li style="margin-bottom: 6px">
+                  <a
+                    href="about.html"
+                    style="color: rgba(255, 255, 255, 0.6); font-size: 14px"
+                    >About Us</a
+                  >
+                </li>
+                <li style="margin-bottom: 6px">
+                  <a
+                    href="services.html"
+                    style="color: rgba(255, 255, 255, 0.6); font-size: 14px"
+                    >Our Services</a
+                  >
+                </li>
+                <li style="margin-bottom: 6px">
+                  <a
+                    href="contact.html"
+                    style="color: rgba(255, 255, 255, 0.6); font-size: 14px"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-md-6"></div>
@@ -654,15 +1361,15 @@
                   <li>
                     <span class="icon fa fa-map" aria-hidden="true"></span>
                     <span class="text"
-                      >AKAF Industrial Support Services,<br />
-                      2364 King Fahad Ibn Abdulaziz Rd Al Wahah Dist., Unit No.
-                      8629 Al Jubail 35514 Kingdom of Saudi Arabia</span
+                      >AKAF Industrial Support Services,<br />2364 King Fahad
+                      Ibn Abdulaziz Rd Al Wahah Dist., Unit No. 8629 Al Jubail
+                      35514 Kingdom of Saudi Arabia</span
                     >
                   </li>
                   <li>
-                    <a href="tel:+96613361741">
+                    <a href="tel:+966539291373">
                       <span class="icon fa fa-phone" aria-hidden="true"></span>
-                      <span class="text">+966 133 61741</span>
+                      <span class="text">+966 53 929 1373</span>
                     </a>
                   </li>
                   <li>
@@ -694,6 +1401,10 @@
         </div>
       </div>
     </footer>
+
+    <button id="scroll-top" aria-label="Scroll back to top">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
     <div id="ftco-loader" class="show fullscreen" aria-hidden="true">
       <svg class="circular" width="48px" height="48px">
@@ -730,11 +1441,139 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <!-- FIXED: Removed dead google-map.js script load -->
     <script src="js/main.js"></script>
     <script>
       document.getElementById("copyright-year").textContent =
         new Date().getFullYear();
+      const scrollBtn = document.getElementById("scroll-top");
+      window.addEventListener("scroll", function () {
+        scrollBtn.classList.toggle("visible", window.scrollY > 400);
+      });
+      scrollBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // ── AJAX FormSubmit handler: Quote form (about page) ──────────────────
+      (function () {
+        function sanitize(str) {
+          return String(str).replace(/[<>"'`\r\n\t]/g, ' ').trim();
+        }
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+        function showMsg(el, type, text) {
+          el.style.display = 'block';
+          el.style.padding = '12px 16px';
+          el.style.borderRadius = '6px';
+          el.style.fontWeight = '600';
+          el.style.fontSize = '13px';
+          if (type === 'success') {
+            el.style.background = '#f0faf0';
+            el.style.border = '1px solid #4caf50';
+            el.style.color = '#2e7d32';
+          } else {
+            el.style.background = '#fff3f3';
+            el.style.border = '1px solid #e53935';
+            el.style.color = '#c62828';
+          }
+          el.textContent = text;
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        var form   = document.getElementById('about-quote-form');
+        var btn    = document.querySelector('#about-quote-form input[type="submit"]');
+        var msgDiv = document.getElementById('about-form-msg');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          msgDiv.style.display = 'none';
+
+          var firstName = sanitize(document.getElementById('about_first_name').value);
+          var lastName  = sanitize(document.getElementById('about_last_name').value);
+          var email     = sanitize(document.getElementById('about_email').value);
+          var service   = sanitize(document.getElementById('about_service').value);
+          var phone     = sanitize(document.getElementById('about_phone').value);
+          var message   = sanitize(document.getElementById('about_message').value);
+
+          if (firstName.length < 2) {
+            showMsg(msgDiv, 'error', 'Please enter your first name.');
+            document.getElementById('about_first_name').focus();
+            return;
+          }
+          if (lastName.length < 2) {
+            showMsg(msgDiv, 'error', 'Please enter your last name.');
+            document.getElementById('about_last_name').focus();
+            return;
+          }
+          if (!isValidEmail(email)) {
+            showMsg(msgDiv, 'error', 'Please enter a valid email address.');
+            document.getElementById('about_email').focus();
+            return;
+          }
+          if (!service) {
+            showMsg(msgDiv, 'error', 'Please select the service you require.');
+            document.getElementById('about_service').focus();
+            return;
+          }
+          if (phone.length < 7) {
+            showMsg(msgDiv, 'error', 'Please enter a valid phone number.');
+            document.getElementById('about_phone').focus();
+            return;
+          }
+          if (message.length < 10) {
+            showMsg(msgDiv, 'error', 'Please describe your requirement (at least 10 characters).');
+            document.getElementById('about_message').focus();
+            return;
+          }
+
+          var originalBtnText = btn.value;
+          btn.value = 'Sending…';
+          btn.disabled  = true;
+
+          var payload = {
+            Name: firstName + " " + lastName,
+            Email: email,
+            Phone: phone,
+            Service: service,
+            Requirement: message,
+            _subject: "New Quote Request – AKAF Website (" + service + ")",
+            _captcha: "false",
+            _template: "table"
+          };
+
+          var honey = form.querySelector('input[name="_honey"]');
+          if (honey && honey.value) {
+             payload._honey = honey.value;
+          }
+
+          fetch(form.action, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success || data.success === "true") {
+              showMsg(msgDiv, 'success', '✓ Your quote request was sent successfully! Our team will follow up shortly.');
+              form.reset();
+            } else {
+              throw new Error(data.message || "Server Error");
+            }
+          })
+          .catch(error => {
+            console.error("FormSubmit Error:", error);
+            showMsg(msgDiv, 'error', 'Sorry, something went wrong. Please email us at info@akafcompany.com');
+          })
+          .finally(() => {
+            btn.value = originalBtnText;
+            btn.disabled  = false;
+          });
+        });
+      }());
     </script>
   </body>
 </html>

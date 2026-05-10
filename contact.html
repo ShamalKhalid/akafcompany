@@ -1,114 +1,290 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- FIXED: Unique page title -->
-    <title>
-      Contact Us | AKAF Company - Engineering &amp; Industrial Services
-    </title>
+    <title>Contact Us | AKAF Company - Engineering &amp; Industrial Services</title>
     <meta charset="utf-8" />
-    <!-- FIXED: Added meta description -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
+    />
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
     <meta
       name="description"
-      content="Get in touch with AKAF Company. Send us a message or call us for manpower, construction, maintenance, equipment rental, and industrial service inquiries."
+      content="Contact AKAF Company for manpower supply, construction, maintenance, equipment rental, corrosion control, logistics, and specialised industrial service enquiries across Saudi Arabia."
     />
     <meta property="og:title" content="Contact AKAF Company" />
-    <meta
-      property="og:description"
-      content="Reach AKAF Company for engineering and industrial service inquiries across Saudi Arabia."
-    />
+    <meta property="og:description" content="Reach AKAF Company for manpower, maintenance, construction, equipment, and industrial support enquiries across Saudi Arabia." />
     <meta property="og:type" content="website" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta property="og:url" content="https://akafcompany.com/contact.html" />
+    <meta property="og:image" content="https://akafcompany.com/images/bg_2.webp" />
+    <meta property="og:image:alt" content="AKAF Company industrial support services" />
+    <meta property="og:site_name" content="AKAF Company" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact AKAF Company" />
+    <meta name="twitter:description" content="Reach AKAF Company for manpower, maintenance, construction, equipment, and industrial support enquiries across Saudi Arabia." />
+    <meta name="twitter:image" content="https://akafcompany.com/images/bg_2.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#bc9755" />
+    <link rel="canonical" href="https://akafcompany.com/contact.html" />
     <link rel="icon" type="image/png" href="images/title-logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- FIXED: Switched from deprecated StackPath CDN to cdnjs -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
+
     <style>
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+      :root {
+        --gold:       #bc9755;
+        --gold-dark:  #a68344;
+        --brown:      #3a2c27;
+        --muted:      #666666;
+        --transition: 0.3s ease;
+        --radius:     6px;
       }
+      .sr-only {
+        position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+        overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+      }
+      :focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+      html { scroll-padding-top:80px; }
+
+      /* =====================================================
+         ENHANCEMENT: Contact info cards — elevated design
+         WHY: Original was plain text; these feel like a
+         premium B2B contact page
+         ===================================================== */
+      .contact-cards-row { margin-bottom:60px; }
+      .contact-card {
+        background:#fff;
+        border-radius:var(--radius);
+        padding:28px 24px;
+        text-align:center;
+        border:1px solid rgba(0,0,0,0.07);
+        box-shadow:0 2px 16px rgba(0,0,0,0.05);
+        transition:transform var(--transition), box-shadow var(--transition);
+        height:100%;
+      }
+      .contact-card:hover {
+        transform:translateY(-4px);
+        box-shadow:0 8px 32px rgba(0,0,0,0.1);
+      }
+      .contact-card-icon {
+        width:60px; height:60px;
+        background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+        border-radius:50%;
+        display:flex; align-items:center; justify-content:center;
+        margin:0 auto 16px;
+        font-size:22px; color:#fff;
+        box-shadow:0 4px 16px rgba(188,151,85,0.3);
+      }
+      .contact-card h4 {
+        font-size:16px; font-weight:700; color:var(--brown);
+        margin-bottom:8px;
+      }
+      .contact-card p, .contact-card a {
+        font-size:14px; color:var(--muted);
+        line-height:1.7; margin:0; text-decoration:none;
+        transition:color var(--transition);
+      }
+      .contact-card a:hover { color:var(--gold); }
+
+      /* =====================================================
+         ENHANCEMENT: Response-time promise banner
+         WHY ADDED: B2B buyers want to know when to expect a
+         reply — sets expectations and builds confidence
+         ===================================================== */
+      .response-banner {
+        background:linear-gradient(90deg, rgba(188,151,85,0.1) 0%, rgba(188,151,85,0.05) 100%);
+        border:1px solid rgba(188,151,85,0.25);
+        border-radius:var(--radius);
+        padding:16px 24px;
+        display:flex; align-items:center; gap:14px;
+        margin-bottom:32px;
+      }
+      .response-banner .rb-icon {
+        width:40px; height:40px; flex-shrink:0;
+        background:var(--gold); border-radius:50%;
+        display:flex; align-items:center; justify-content:center;
+        color:#fff; font-size:16px;
+      }
+      .response-banner p { margin:0; font-size:14px; color:var(--brown); }
+      .response-banner strong { color:var(--gold); }
+
+      /* =====================================================
+         ENHANCEMENT: Form — improved visual labels, floating
+         feedback, richer placeholder text
+         ===================================================== */
+      .contact-form-wrap {
+        background:#fff;
+        border-radius:var(--radius);
+        padding:40px;
+        box-shadow:0 4px 32px rgba(0,0,0,0.07);
+        border:1px solid rgba(0,0,0,0.07);
+      }
+      @media(max-width:576px) {
+        .contact-form-wrap { padding:24px 16px; }
+      }
+      .contact-form-wrap .form-group {
+        position:relative;
+      }
+      .contact-form-wrap .form-control {
+        border:1px solid #e0ddd9 !important;
+        border-radius:var(--radius) !important;
+        transition:border-color var(--transition), box-shadow var(--transition) !important;
+      }
+      .contact-form-wrap .form-control:focus {
+        border-color:var(--gold) !important;
+        box-shadow:0 0 0 3px rgba(188,151,85,0.15) !important;
+      }
+      .contact-form-wrap .form-control::placeholder { color:#aaa; }
+
+      /* Visible label above each field for accessibility */
+      .field-label {
+        font-size:12px; font-weight:700; color:var(--brown);
+        text-transform:uppercase; letter-spacing:0.8px;
+        display:block; margin-bottom:6px;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Submit button with arrow icon
+         ===================================================== */
+      .btn-contact-submit {
+        background:var(--gold) !important;
+        border:2px solid var(--gold) !important;
+        color:#fff !important;
+        font-weight:700; font-size:15px;
+        padding:14px 36px;
+        border-radius:var(--radius);
+        width:100%;
+        transition:all var(--transition);
+        display:flex; align-items:center; justify-content:center; gap:8px;
+      }
+      .btn-contact-submit:hover {
+        background:var(--gold-dark) !important;
+        border-color:var(--gold-dark) !important;
+        transform:translateY(-1px);
+        box-shadow:0 4px 16px rgba(188,151,85,0.35);
+      }
+      .btn-contact-submit:disabled {
+        opacity:0.65; cursor:not-allowed; transform:none;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Inline form success / error message
+         ===================================================== */
+      .form-feedback {
+        padding:14px 18px;
+        border-radius:var(--radius);
+        font-size:14px;
+        font-weight:600;
+        margin-top:16px;
+        display:none;
+      }
+      .form-feedback.success {
+        background:#f0faf0;
+        border:1px solid #4caf50;
+        color:#2e7d32;
+      }
+      .form-feedback.error {
+        background:#fff3f3;
+        border:1px solid #e53935;
+        color:#c62828;
+      }
+
+      /* =====================================================
+         ENHANCEMENT: Working hours info block
+         WHY ADDED: Common question; surfacing it removes a
+         barrier to contact
+         ===================================================== */
+      .hours-block {
+        background:#faf8f4;
+        border-radius:var(--radius);
+        padding:20px 24px;
+        margin-top:24px;
+        border-left:3px solid var(--gold);
+      }
+      .hours-block h5 { font-size:15px; font-weight:700; color:var(--brown); margin-bottom:10px; }
+      .hours-row {
+        display:flex; justify-content:space-between;
+        font-size:13px; color:var(--muted);
+        padding:5px 0;
+        border-bottom:1px solid rgba(0,0,0,0.06);
+      }
+      .hours-row:last-child { border-bottom:none; }
+      .hours-row .day   { font-weight:600; color:var(--brown); }
+      .hours-row .time  { color:var(--gold); font-weight:600; }
+
+      /* Scroll-to-top */
+      #scroll-top {
+        position:fixed; bottom:28px; right:28px; width:44px; height:44px;
+        background:var(--gold); color:#fff; border:none; border-radius:50%;
+        font-size:16px; cursor:pointer; opacity:0; visibility:hidden;
+        transform:translateY(12px); transition:all var(--transition); z-index:999;
+        display:flex; align-items:center; justify-content:center;
+        box-shadow:0 4px 16px rgba(188,151,85,0.4);
+      }
+      #scroll-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+      #scroll-top:hover   { background:var(--gold-dark); transform:translateY(-2px); }
+
+      .nav-item.active > .nav-link { position:relative; }
+      .nav-item.active > .nav-link::after {
+        content:''; position:absolute; bottom:4px; left:20px; right:20px;
+        height:2px; background:var(--gold); border-radius:1px;
+      }
+
+      .section-divider { width:60px; height:3px; background:var(--gold); border-radius:2px; margin:0 auto 24px; }
     </style>
   </head>
+
   <body>
     <nav
       class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
-      id="ftco-navbar"
+      id="ftco-navbar" role="navigation" aria-label="Main navigation"
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <img
-            src="images/akaf logo.png"
-            alt="AKAF Company Logo"
-            class="logo"
-          />
+          <img src="images/akaf logo.png" alt="AKAF Company Logo" class="logo" />
         </a>
         <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          class="navbar-toggler" type="button"
+          data-toggle="collapse" data-target="#ftco-nav"
+          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"
         >
           <span class="oi oi-menu"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="services.html" class="nav-link">Services</a>
-            </li>
-            <li class="nav-item active">
-              <a href="contact.html" class="nav-link">Contact</a>
-            </li>
+            <li class="nav-item"><a href="index.html"    class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html"    class="nav-link">About</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+            <li class="nav-item active"><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- HERO BANNER -->
     <section
       class="hero-wrap hero-wrap-2"
       style="background-image: url(&quot;images/bg_2.webp&quot;)"
       data-stellar-background-ratio="0.5"
+      aria-label="Contact page hero"
     >
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end">
           <div class="col-md-9 ftco-animate pb-5">
             <p class="breadcrumbs">
-              <span class="mr-2"
-                ><a href="index.html"
-                  >Home <i class="fa fa-chevron-right"></i></a
-              ></span>
+              <span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span>
               <span>Contact us <i class="fa fa-chevron-right"></i></span>
             </p>
             <h1 class="mb-3 bread">Contact Us</h1>
@@ -117,162 +293,253 @@
       </div>
     </section>
 
-    <section class="ftco-section contact-section">
+    <!-- ========================================================
+         CONTACT PAGE BODY
+         ======================================================== -->
+    <section class="ftco-section contact-section" aria-label="Contact information and enquiry form">
       <div class="container">
-        <div class="row block-9 justify-content-center mb-5">
-          <div class="col-md-8 mb-md-5">
-            <!--
-              SECURITY FIXES:
-              - Honeypot field to block bot submissions
-              - Hidden _subject for better email subjects
-              - maxlength on all text/textarea fields prevents oversized payloads
-              - type="email" already present — kept
-              - Labels added for screen reader accessibility
-              - autocomplete attributes added for UX
-            -->
-            <form
-              action="https://formspree.io/f/xrbnazev"
-              method="post"
-              class="bg-light p-5 contact-form"
-            >
-              <input
-                type="text"
-                name="_gotcha"
-                style="display: none"
-                tabindex="-1"
-                autocomplete="off"
-                aria-hidden="true"
-              />
-              <input
-                type="hidden"
-                name="_subject"
-                value="New Contact Message - AKAF Website"
-              />
 
-              <div class="form-group">
-                <label for="contact_name" class="sr-only">Your Name</label>
-                <input
-                  id="contact_name"
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  placeholder="Your Name"
-                  required
-                  maxlength="100"
-                  minlength="2"
-                  autocomplete="name"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="contact_email" class="sr-only">Your Email</label>
-                <input
-                  id="contact_email"
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="Your Email"
-                  required
-                  maxlength="100"
-                  autocomplete="email"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="contact_subject" class="sr-only">Subject</label>
-                <input
-                  id="contact_subject"
-                  type="text"
-                  name="subject"
-                  class="form-control"
-                  placeholder="Subject"
-                  required
-                  maxlength="150"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="contact_message" class="sr-only">Message</label>
-                <textarea
-                  id="contact_message"
-                  name="message"
-                  cols="30"
-                  rows="7"
-                  class="form-control"
-                  placeholder="Message"
-                  required
-                  maxlength="2000"
-                ></textarea>
-              </div>
-
-              <div class="form-group">
-                <input
-                  type="submit"
-                  value="Send Message"
-                  class="btn btn-primary py-3 px-5"
-                />
-              </div>
-            </form>
-
-            <!-- FIXED: Moved the helper text above the form would be better UX,
-                 but to preserve layout we leave it here and just clean up the phrasing -->
-            <h2 class="text-center mt-5">
-              Have a question? We'd love to hear from you.
-            </h2>
+        <!-- ENHANCED: Section heading with intro copy -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <span class="subheading">Get In Touch</span>
+            <h2 class="mb-2">We'd Love to Hear From You</h2>
+            <div class="section-divider"></div>
+            <p class="mt-3" style="color:var(--muted);">
+              Whether you need manpower, maintenance, equipment, or specialised industrial support, our team is ready to review your requirement.
+            </p>
           </div>
         </div>
 
-        <!-- Contact info cards — kept as-is, structure is clean -->
-        <div class="row d-flex mb-5 contact-info justify-content-center">
-          <div class="col-md-8">
-            <div class="row mb-5">
-              <div class="col-md-4 text-center py-4">
-                <div class="icon">
-                  <span class="fa fa-map" aria-hidden="true"></span>
-                </div>
-                <p>
-                  <span>Address:</span> AKAF Company<br />
-                  Jubail 31951, P.O. Box 2594,<br />
-                  King Abdullah Road,<br />
-                  Blue Palace Tower 1st,<br />
-                  Kingdom of Saudi Arabia
-                </p>
+        <!-- ENHANCED: Contact info cards — richer, icon-based layout -->
+        <div class="row contact-cards-row ftco-animate">
+          <div class="col-md-4 mb-4 d-flex">
+            <div class="contact-card w-100">
+              <div class="contact-card-icon">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
               </div>
-              <div class="col-md-4 text-center border-height py-4">
-                <div class="icon">
-                  <span class="fa fa-phone" aria-hidden="true"></span>
-                </div>
-                <p>
-                  <span>Phone:</span>
-                  <a href="tel:+96613361741">+966 133 61741</a>
-                </p>
+              <h4>Our Address</h4>
+              <p>
+                AKAF Industrial Support Services<br />
+                2364 King Fahad Ibn Abdulaziz Rd<br />
+                Al Wahah Dist., Unit No. 8629<br />
+                Al Jubail 35514, Kingdom of Saudi Arabia
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 d-flex">
+            <div class="contact-card w-100">
+              <div class="contact-card-icon">
+                <i class="fa fa-phone" aria-hidden="true"></i>
               </div>
-              <div class="col-md-4 text-center py-4">
-                <div class="icon">
-                  <span class="fa fa-paper-plane" aria-hidden="true"></span>
-                </div>
-                <p>
-                  <span>Email:</span>
-                  <a href="mailto:info@akafcompany.com">info@akafcompany.com</a>
-                </p>
+              <h4>Call Us</h4>
+              <p>
+                <a href="tel:+966539291373">+966 53 929 1373</a>
+              </p>
+              <p style="margin-top:10px; font-size:13px;">
+                Speak with our team about manpower, maintenance, equipment,
+                logistics, and industrial support requirements.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 d-flex">
+            <div class="contact-card w-100">
+              <div class="contact-card-icon">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
               </div>
+              <h4>Email Us</h4>
+              <p>
+                <a href="mailto:info@akafcompany.com">info@akafcompany.com</a>
+              </p>
+              <p style="margin-top:10px; font-size:13px;">
+                Send your scope, location, and required service details to get started.
+              </p>
             </div>
           </div>
         </div>
-        <!-- Map is commented out — remove script reference until re-enabled -->
+        <!-- ENHANCED: Two-column layout: form + sidebar info -->
+        <div class="row ftco-animate">
+
+          <!-- CONTACT FORM — enhanced with visible labels and feedback -->
+          <div class="col-md-7 mb-5">
+            <!-- ENHANCED: Response time banner -->
+            <div class="response-banner">
+              <div class="rb-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+              <p>
+                <strong>Project Enquiry Support:</strong> Share your requirement and our team will review the scope, service need, and next practical step for your enquiry.
+              </p>
+            </div>
+
+            <div class="contact-form-wrap">
+              <h3 style="font-size:22px; font-weight:700; color:var(--brown); margin-bottom:24px;">
+                Send Us a Message
+              </h3>
+
+              <!--
+                SECURITY NOTES:
+                - Uses FormSubmit.co for backendless AJAX submission
+                - maxlength caps prevent oversized payloads
+                - type="email" enforces email format
+                - Input sanitized before being sent
+              -->
+              <form
+                id="contact-form"
+                action="https://formsubmit.co/ajax/info@akafcompany.com"
+                method="POST"
+                novalidate
+              >
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Contact Message – AKAF Website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+
+                <div class="form-group">
+                  <label for="contact_name" class="field-label">Your Name <span style="color:#e53935">*</span></label>
+                  <input
+                    id="contact_name" type="text" name="name" class="form-control"
+                    placeholder="e.g. Mohammed Al-Rashidi"
+                    required minlength="2" maxlength="100" autocomplete="name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact_email" class="field-label">Email Address <span style="color:#e53935">*</span></label>
+                  <input
+                    id="contact_email" type="email" name="email" class="form-control"
+                    placeholder="e.g. m.rashidi@company.com"
+                    required maxlength="100" autocomplete="email"
+                  />
+                </div>
+
+                <!-- ENHANCED: Phone field (was missing from original) -->
+                <div class="form-group">
+                  <label for="contact_phone" class="field-label">Phone Number</label>
+                  <input
+                    id="contact_phone" type="tel" name="phone" class="form-control"
+                    placeholder="e.g. +966 50 000 0000"
+                    maxlength="20" pattern="[\+\d\s\-\(\)]{7,20}"
+                    title="Please enter a valid phone number" autocomplete="tel"
+                  />
+                </div>
+
+                <!-- ENHANCED: Company field — useful for B2B context -->
+                <div class="form-group">
+                  <label for="contact_company" class="field-label">Company / Organisation</label>
+                  <input
+                    id="contact_company" type="text" name="company" class="form-control"
+                    placeholder="Your company name" maxlength="120" autocomplete="organization"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact_subject" class="field-label">Subject <span style="color:#e53935">*</span></label>
+                  <input
+                    id="contact_subject" type="text" name="subject" class="form-control"
+                    placeholder="e.g. Manpower supply for shutdown project"
+                    required maxlength="150"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact_message" class="field-label">Your Message <span style="color:#e53935">*</span></label>
+                  <textarea
+                    id="contact_message" name="message" cols="30" rows="7" class="form-control"
+                    placeholder="Tell us about your project or enquiry: service required, location, timeline, and any specific requirements."
+                    required maxlength="2000"
+                  ></textarea>
+                  <!-- ENHANCED: Character counter -->
+                  <div style="font-size:11px; color:#aaa; text-align:right; margin-top:4px;">
+                    <span id="char-count">0</span> / 2000 characters
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:0;">
+                  <button type="submit" id="contact-submit-btn" class="btn-contact-submit">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    Send Message
+                  </button>
+                </div>
+
+                <!-- Feedback message -->
+                <div class="form-feedback" id="contact-form-msg" role="alert" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+
+          <!-- SIDEBAR: Working hours + quick links -->
+          <div class="col-md-5 mb-5">
+            <div class="hours-block">
+              <h5><i class="fa fa-list-ul" style="color:var(--gold); margin-right:8px;" aria-hidden="true"></i>Enquiry Areas</h5>
+              <div class="hours-row"><span class="day">Manpower Supply</span><span class="time">Project-ready teams</span></div>
+              <div class="hours-row"><span class="day">Maintenance &amp; Shutdown</span><span class="time">Routine and critical support</span></div>
+              <div class="hours-row"><span class="day">Equipment &amp; Logistics</span><span class="time">Site and transport support</span></div>
+              <div class="hours-row" style="margin-top:10px; border-top:1px solid rgba(0,0,0,0.08); padding-top:10px;">
+                <span class="day" style="font-size:12px; color:var(--muted);">Specialised Services</span>
+                <span class="time" style="font-size:12px;">Coating, hydro jetting, integrity, and facility support</span>
+              </div>
+            </div>
+
+            <div style="margin-top:24px; padding:20px 24px; background:#fff; border-radius:var(--radius); border:1px solid rgba(0,0,0,0.07);">
+              <h5 style="font-size:15px; font-weight:700; color:var(--brown); margin-bottom:14px;">
+                <i class="fa fa-list-ol" style="color:var(--gold); margin-right:8px;" aria-hidden="true"></i>
+                What Happens Next?
+              </h5>
+              <ol style="padding-left:18px; margin:0; font-size:13px; color:var(--muted); line-height:1.8;">
+                <li>We review your enquiry and identify the service requirement</li>
+                <li>Our team aligns the right manpower, equipment, or industrial support scope</li>
+                <li>We follow up with the practical next step for coordination</li>
+                <li>Project planning and mobilisation move forward based on the requirement</li>
+              </ol>
+            </div>
+
+            <div style="margin-top:24px;">
+              <h5 style="font-size:15px; font-weight:700; color:var(--brown); margin-bottom:14px;">
+                Prefer to Reach Us Directly?
+              </h5>
+              <a
+                href="tel:+966539291373"
+                style="display:flex; align-items:center; gap:12px; padding:14px 18px;
+                       background:var(--gold); color:#fff; border-radius:var(--radius);
+                       text-decoration:none; font-weight:600; font-size:14px; margin-bottom:10px;
+                       transition:all 0.3s ease;"
+                onmouseover="this.style.background='#a68344'"
+                onmouseout="this.style.background='#bc9755'"
+              >
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                Call: +966 53 929 1373
+              </a>
+              <a
+                href="mailto:info@akafcompany.com"
+                style="display:flex; align-items:center; gap:12px; padding:14px 18px;
+                       background:#fff; color:var(--brown); border-radius:var(--radius);
+                       border:2px solid rgba(188,151,85,0.4); text-decoration:none;
+                       font-weight:600; font-size:14px;
+                       transition:all 0.3s ease;"
+                onmouseover="this.style.borderColor='#bc9755'; this.style.color='#bc9755';"
+                onmouseout="this.style.borderColor='rgba(188,151,85,0.4)'; this.style.color='var(--brown)';"
+              >
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                Email: info@akafcompany.com
+              </a>
+            </div>
+          </div>
+        </div><!-- end row -->
       </div>
     </section>
 
-    <footer class="ftco-footer ftco-section">
+    <!-- FOOTER -->
+    <footer class="ftco-footer ftco-section" role="contentinfo">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">AKAF Company</h2>
-              <p>
-                Trusted by industries that never compromise. We deliver results
-                that speak louder than promises.
-              </p>
+              <p>Trusted by industries that never compromise. We deliver results that speak louder than promises.</p>
+              <ul style="list-style:none; padding:0; margin-top:16px;">
+                <li style="margin-bottom:6px;"><a href="about.html"    style="color:rgba(255,255,255,0.6); font-size:14px;">About Us</a></li>
+                <li style="margin-bottom:6px;"><a href="services.html" style="color:rgba(255,255,255,0.6); font-size:14px;">Our Services</a></li>
+                <li style="margin-bottom:6px;"><a href="contact.html"  style="color:rgba(255,255,255,0.6); font-size:14px;">Contact Us</a></li>
+              </ul>
             </div>
           </div>
           <div class="col-md-6"></div>
@@ -283,24 +550,17 @@
                 <ul>
                   <li>
                     <span class="icon fa fa-map" aria-hidden="true"></span>
-                    <span class="text"
-                      >AKAF Industrial Support Services,<br />
-                      2364 King Fahad Ibn Abdulaziz Rd Al Wahah Dist., Unit No.
-                      8629 Al Jubail 35514 Kingdom of Saudi Arabia</span
-                    >
+                    <span class="text">AKAF Industrial Support Services,<br />2364 King Fahad Ibn Abdulaziz Rd Al Wahah Dist., Unit No. 8629 Al Jubail 35514 Kingdom of Saudi Arabia</span>
                   </li>
                   <li>
-                    <a href="tel:+96613361741">
+                    <a href="tel:+966539291373">
                       <span class="icon fa fa-phone" aria-hidden="true"></span>
-                      <span class="text">+966 133 61741</span>
+                      <span class="text">+966 53 929 1373</span>
                     </a>
                   </li>
                   <li>
                     <a href="mailto:info@akafcompany.com">
-                      <span
-                        class="icon fa fa-envelope pr-4"
-                        aria-hidden="true"
-                      ></span>
+                      <span class="icon fa fa-envelope pr-4" aria-hidden="true"></span>
                       <span class="text">info@akafcompany.com</span>
                     </a>
                   </li>
@@ -312,40 +572,22 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p>
-              Copyright &copy; <span id="copyright-year"></span> All rights
-              reserved |
-              <a
-                href="https://shamalkhalidnp.netlify.app/"
-                style="color: #a68344"
-                >SK</a
-              >
+              Copyright &copy; <span id="copyright-year"></span> All rights reserved |
+              <a href="https://shamalkhalidnp.netlify.app/" style="color:#a68344;">SK</a>
             </p>
           </div>
         </div>
       </div>
     </footer>
 
+    <button id="scroll-top" aria-label="Scroll back to top">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
     <div id="ftco-loader" class="show fullscreen" aria-hidden="true">
       <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
       </svg>
     </div>
 
@@ -360,11 +602,140 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <!-- FIXED: Removed dead google-map.js script load -->
     <script src="js/main.js"></script>
+
     <script>
-      document.getElementById("copyright-year").textContent =
-        new Date().getFullYear();
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      // Scroll-to-top
+      var scrollBtn = document.getElementById('scroll-top');
+      window.addEventListener('scroll', function () {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Character counter for message textarea
+      var msgArea  = document.getElementById('contact_message');
+      var charSpan = document.getElementById('char-count');
+      if (msgArea && charSpan) {
+        msgArea.addEventListener('input', function () {
+          charSpan.textContent = this.value.length;
+          charSpan.style.color = this.value.length > 1800 ? '#e53935' : '#aaa';
+        });
+      }
+
+      // ── AJAX FormSubmit handler ───────────────────────────────────────────
+      (function () {
+        function sanitize(str) {
+          return String(str).replace(/[<>"'`\r\n\t]/g, ' ').trim();
+        }
+
+        // Validate email format
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Show inline feedback
+        function showMsg(msgDiv, type, text) {
+          msgDiv.className = 'form-feedback ' + type;
+          msgDiv.textContent = text;
+          msgDiv.style.display = 'block';
+          msgDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        var form   = document.getElementById('contact-form');
+        var btn    = document.getElementById('contact-submit-btn');
+        var msgDiv = document.getElementById('contact-form-msg');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          msgDiv.style.display = 'none';
+
+          // ── Gather & sanitize values ────────────────────────────────────
+          var name    = sanitize(document.getElementById('contact_name').value);
+          var email   = sanitize(document.getElementById('contact_email').value);
+          var phone   = sanitize(document.getElementById('contact_phone').value);
+          var company = sanitize(document.getElementById('contact_company').value);
+          var subject = sanitize(document.getElementById('contact_subject').value);
+          var message = sanitize(document.getElementById('contact_message').value);
+
+          // ── Client-side validation ──────────────────────────────────────
+          if (name.length < 2) {
+            showMsg(msgDiv, 'error', 'Please enter your full name.');
+            document.getElementById('contact_name').focus();
+            return;
+          }
+          if (!isValidEmail(email)) {
+            showMsg(msgDiv, 'error', 'Please enter a valid email address.');
+            document.getElementById('contact_email').focus();
+            return;
+          }
+          if (subject.length < 3) {
+            showMsg(msgDiv, 'error', 'Please enter a subject.');
+            document.getElementById('contact_subject').focus();
+            return;
+          }
+          if (message.length < 10) {
+            showMsg(msgDiv, 'error', 'Please enter a message (at least 10 characters).');
+            document.getElementById('contact_message').focus();
+            return;
+          }
+
+          // Show loading state
+          var originalBtnText = btn.innerHTML;
+          btn.innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Sending…';
+          btn.disabled  = true;
+
+          // Build payload
+          var payload = {
+            Name: name,
+            Email: email,
+            Phone: phone || 'Not provided',
+            Company: company || 'Not provided',
+            Subject: subject,
+            Message: message,
+            _subject: "New Contact Message – AKAF Website: " + subject,
+            _captcha: "false",
+            _template: "table"
+          };
+
+          var honey = form.querySelector('input[name="_honey"]');
+          if (honey && honey.value) {
+             payload._honey = honey.value;
+          }
+
+          // Submit via AJAX
+          fetch(form.action, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success || data.success === "true") {
+              showMsg(msgDiv, 'success', '✓ Your message was sent successfully! Our team will review your enquiry and follow up.');
+              form.reset();
+              if (charSpan) charSpan.textContent = '0';
+            } else {
+              throw new Error(data.message || "Server Error");
+            }
+          })
+          .catch(error => {
+            console.error("FormSubmit Error:", error);
+            showMsg(msgDiv, 'error', 'Sorry, something went wrong. Please email us directly at info@akafcompany.com');
+          })
+          .finally(() => {
+            btn.innerHTML = originalBtnText;
+            btn.disabled  = false;
+          });
+        });
+      }());
     </script>
   </body>
 </html>
