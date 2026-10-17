@@ -30,6 +30,8 @@
     <meta name="theme-color" content="#bc9755" />
     <link rel="canonical" href="https://akafcompany.com/services.html" />
     <link rel="icon" type="image/png" href="images/title-logo.png" />
+    <!-- Preload LCP hero background image for faster paint -->
+    <link rel="preload" as="image" href="images/bg_2.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet" />
@@ -235,6 +237,59 @@
 
       /* Section divider accent */
       .section-divider { width:60px; height:3px; background:var(--gold); border-radius:2px; margin:0 auto 24px; }
+
+      /* =====================================================
+         SERVICE PAGE — Responsive & spacing fixes
+         ===================================================== */
+
+      /* Service cards grid — consistent row gap */
+      #services-container {
+        row-gap: 8px;
+      }
+
+      /* Service card image height responsive */
+      @media (max-width: 575.98px) {
+        .service-card-enhanced .card-img-wrap {
+          height: 180px;
+        }
+        .service-card-enhanced .card-body-wrap {
+          padding: 16px;
+        }
+        .service-card-enhanced h3 {
+          font-size: 16px;
+        }
+        .service-card-enhanced ul li {
+          font-size: 13px;
+        }
+      }
+
+      /* Process steps — stack nicely on mobile */
+      @media (max-width: 767.98px) {
+        .process-step {
+          padding: 16px;
+          gap: 14px;
+          margin-bottom: 16px;
+        }
+        .step-number {
+          width: 38px;
+          height: 38px;
+          font-size: 16px;
+        }
+        .step-content h4 {
+          font-size: 15px;
+        }
+        .process-section {
+          padding: 3em 0;
+        }
+      }
+
+      /* Oil & Gas feature box — stack on mobile */
+      @media (max-width: 575.98px) {
+        .ftco-section [style*="display: flex"][style*="align-items: flex-start"][style*="gap: 24px"] {
+          flex-direction: column !important;
+          padding: 24px 20px !important;
+        }
+      }
     </style>
   </head>
 
